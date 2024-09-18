@@ -6,7 +6,7 @@ let calculationDone = false;
 
 
 function clearDisplay() {
-    document.getElementById("result").value = '';
+    document.getElementById("result").value = "  ";
 }
 
 
@@ -14,7 +14,7 @@ function clearDisplay() {
 function display(myvar) {
 
     if (document.getElementById("result").value === "Invalid operation" || calculationDone) {
-        document.getElementById("result").value = ""
+        document.getElementById("result").value = "  "
         calculationDone = false
     }
     document.getElementById("result").value += myvar;
@@ -27,7 +27,7 @@ function calculate() {
 
     try {
         var calc = eval(document.getElementById('result').value)
-        document.getElementById("result").value = calc;
+        document.getElementById("result").value = "  " + calc;
         calculationDone = true;
 
         if ([".", "undefined"].includes(calc.toString())) {
